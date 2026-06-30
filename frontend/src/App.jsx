@@ -4,6 +4,7 @@ import AuthModule from './modules/AuthModule';
 import PreferencesModule from './modules/PreferencesModule';
 import DraftFormModule from './modules/DraftFormModule';
 import ProductCatalogModule from './modules/ProductCatalogModule';
+import AssetLoaderModule from './modules/AssetLoaderModule';
 
 function App() {
   const [healthStatus, setHealthStatus] = useState('Checking...');
@@ -93,19 +94,7 @@ function App() {
             <ProductCatalogModule showToast={showToast} />
 
             {/* 5. Cache Storage Asset Caching Module */}
-            <div className="glass-panel p-6 border-t-4 border-module-cache">
-              <h2 className="text-lg font-bold text-white mb-2 flex items-center space-x-2">
-                <span className="h-2 w-2 rounded-full bg-module-cache shadow-lg shadow-cyan-500/50" />
-                <span>5. Cache Storage Asset Caching Module</span>
-              </h2>
-              <p className="text-sm text-gray-400 mb-4">
-                Demonstrates request interception and network latency comparisons using Service Workers.
-              </p>
-              <div className="p-8 border border-dashed border-white/10 rounded-lg flex flex-col items-center justify-center text-center">
-                <span className="text-xs text-gray-500 font-mono mb-2">CACHE_LOADER_MODULE_PLACEHOLDER</span>
-                <p className="text-xs text-gray-400 max-w-xs">PWA asset loader and fetch caching analytics will load in Step 06.</p>
-              </div>
-            </div>
+            <AssetLoaderModule showToast={showToast} />
           </div>
         </section>
 
