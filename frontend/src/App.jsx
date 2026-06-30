@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axiosClient from './api/axiosClient';
+import StorageOverviewCard from './components/StorageOverviewCard';
 import AuthModule from './modules/AuthModule';
 import PreferencesModule from './modules/PreferencesModule';
 import DraftFormModule from './modules/DraftFormModule';
@@ -82,6 +83,9 @@ function App() {
 
           {/* Demonstration module cards */}
           <div className="space-y-6 flex-1">
+            {/* 0. Storage Comparison Overview Table */}
+            <StorageOverviewCard />
+
             {/* 1. HttpOnly Cookie Module */}
             <AuthModule showToast={showToast} />
 
