@@ -5,6 +5,7 @@ import PreferencesModule from './modules/PreferencesModule';
 import DraftFormModule from './modules/DraftFormModule';
 import ProductCatalogModule from './modules/ProductCatalogModule';
 import AssetLoaderModule from './modules/AssetLoaderModule';
+import StorageInspector from './dashboard/StorageInspector';
 
 function App() {
   const [healthStatus, setHealthStatus] = useState('Checking...');
@@ -105,24 +106,8 @@ function App() {
             <span className="text-xs text-gray-400">Live Monitor</span>
           </div>
 
-          {/* Inspector Panel content placeholder */}
-          <div className="glass-panel p-6 flex-1 flex flex-col items-center justify-center text-center border-white/5">
-            <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-gray-400">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
-              </svg>
-            </div>
-            <h3 className="text-sm font-semibold text-gray-300 mb-1">Inspector Dashboard Offline</h3>
-            <p className="text-xs text-gray-500 max-w-xs mb-4">
-              The live telemetry observer and raw data inspector will be fully set up in Step 07.
-            </p>
-            <button
-              onClick={() => showToast('Test notification triggered!', 'info')}
-              className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-xs font-medium transition active:scale-95"
-            >
-              Test Micro-Interaction Toast
-            </button>
-          </div>
+          {/* Dynamic Telemetry observer panel */}
+          <StorageInspector showToast={showToast} />
         </section>
 
       </main>
