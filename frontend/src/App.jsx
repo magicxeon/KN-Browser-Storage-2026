@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axiosClient from './api/axiosClient';
 import AuthModule from './modules/AuthModule';
 import PreferencesModule from './modules/PreferencesModule';
+import DraftFormModule from './modules/DraftFormModule';
 
 function App() {
   const [healthStatus, setHealthStatus] = useState('Checking...');
@@ -85,19 +86,7 @@ function App() {
             <PreferencesModule showToast={showToast} />
 
             {/* 3. SessionStorage Isolation Module */}
-            <div className="glass-panel p-6 border-t-4 border-module-session">
-              <h2 className="text-lg font-bold text-white mb-2 flex items-center space-x-2">
-                <span className="h-2 w-2 rounded-full bg-module-session shadow-lg shadow-orange-500/50" />
-                <span>3. SessionStorage Isolation Module</span>
-              </h2>
-              <p className="text-sm text-gray-400 mb-4">
-                Demonstrates tab-isolated states and synchronous I/O debouncing.
-              </p>
-              <div className="p-8 border border-dashed border-white/10 rounded-lg flex flex-col items-center justify-center text-center">
-                <span className="text-xs text-gray-500 font-mono mb-2">SESSION_DRAFT_MODULE_PLACEHOLDER</span>
-                <p className="text-xs text-gray-400 max-w-xs">Form draft editor with debounce charts will load in Step 04.</p>
-              </div>
-            </div>
+            <DraftFormModule showToast={showToast} />
 
             {/* 4. IndexedDB Heavy Duty Module */}
             <div className="glass-panel p-6 border-t-4 border-module-indexed">
