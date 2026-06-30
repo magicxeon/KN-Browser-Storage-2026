@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axiosClient from './api/axiosClient';
 import AuthModule from './modules/AuthModule';
+import PreferencesModule from './modules/PreferencesModule';
 
 function App() {
   const [healthStatus, setHealthStatus] = useState('Checking...');
@@ -81,19 +82,7 @@ function App() {
             <AuthModule showToast={showToast} />
 
             {/* 2. LocalStorage Preferences Module */}
-            <div className="glass-panel p-6 border-t-4 border-module-local">
-              <h2 className="text-lg font-bold text-white mb-2 flex items-center space-x-2">
-                <span className="h-2 w-2 rounded-full bg-module-local shadow-lg shadow-red-500/50" />
-                <span>2. LocalStorage Preferences Module</span>
-              </h2>
-              <p className="text-sm text-gray-400 mb-4">
-                Demonstrates data persistence and cross-tab synchronization.
-              </p>
-              <div className="p-8 border border-dashed border-white/10 rounded-lg flex flex-col items-center justify-center text-center">
-                <span className="text-xs text-gray-500 font-mono mb-2">PREFERENCES_MODULE_PLACEHOLDER</span>
-                <p className="text-xs text-gray-400 max-w-xs">Theme preference switcher will be loaded here in Step 03.</p>
-              </div>
-            </div>
+            <PreferencesModule showToast={showToast} />
 
             {/* 3. SessionStorage Isolation Module */}
             <div className="glass-panel p-6 border-t-4 border-module-session">
