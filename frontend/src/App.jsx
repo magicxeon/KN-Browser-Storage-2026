@@ -3,6 +3,7 @@ import axiosClient from './api/axiosClient';
 import AuthModule from './modules/AuthModule';
 import PreferencesModule from './modules/PreferencesModule';
 import DraftFormModule from './modules/DraftFormModule';
+import ProductCatalogModule from './modules/ProductCatalogModule';
 
 function App() {
   const [healthStatus, setHealthStatus] = useState('Checking...');
@@ -89,19 +90,7 @@ function App() {
             <DraftFormModule showToast={showToast} />
 
             {/* 4. IndexedDB Heavy Duty Module */}
-            <div className="glass-panel p-6 border-t-4 border-module-indexed">
-              <h2 className="text-lg font-bold text-white mb-2 flex items-center space-x-2">
-                <span className="h-2 w-2 rounded-full bg-module-indexed shadow-lg shadow-green-500/50" />
-                <span>4. IndexedDB Heavy Duty Module</span>
-              </h2>
-              <p className="text-sm text-gray-400 mb-4">
-                Demonstrates high-volume database queries and UI thread offloading using Web Workers.
-              </p>
-              <div className="p-8 border border-dashed border-white/10 rounded-lg flex flex-col items-center justify-center text-center">
-                <span className="text-xs text-gray-500 font-mono mb-2">INDEXEDDB_MODULE_PLACEHOLDER</span>
-                <p className="text-xs text-gray-400 max-w-xs">100k products catalog worker demo will load in Step 05.</p>
-              </div>
-            </div>
+            <ProductCatalogModule showToast={showToast} />
 
             {/* 5. Cache Storage Asset Caching Module */}
             <div className="glass-panel p-6 border-t-4 border-module-cache">
